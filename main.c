@@ -1,14 +1,13 @@
 #include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
+#include <stdlib.h> 
 
 int main()
 {
-    for (int i = -100; i < 500; i++)
-    {
-        if (isprint(i) != isprint(i))
-        {    
-            printf("error: %d \n", i);
-        }
-    }
+    char dst[] = "1";
+    char src[] = "test source";
+    ft_strlcpy(dst, src, 11);
+    printf("%s", dst);
 }

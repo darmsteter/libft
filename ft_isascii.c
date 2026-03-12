@@ -1,5 +1,16 @@
-//why original function gave the non zero result for numbers nor then 255
-int ft_isascii(int ch)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/10 15:37:50 by skorenev          #+#    #+#             */
+/*   Updated: 2026/03/11 15:32:07 by skorenev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_isascii(int c)
 {
-    return (ch >= 0 && ch <= 127);
+	return (c >= 0 && c <= 127);
 }

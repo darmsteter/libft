@@ -1,10 +1,36 @@
-#ifndef LIBFT_H_
-#define LIBFT_H_
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/10 15:35:58 by skorenev          #+#    #+#             */
+/*   Updated: 2026/03/12 16:30:19 by skorenev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isalpha(int ch);
-int ft_isdigit(int ch);
-int ft_isalnum(int ch);
-int ft_isascii(int ch);
-int ft_isprint(int ch);
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <stdio.h>
+
+int		ft_atoi(const char *nptr);
+void	bzero(void *s, size_t n);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strrchr(const char *s, int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 #endif
