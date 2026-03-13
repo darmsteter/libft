@@ -6,12 +6,21 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 18:06:16 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/12 13:03:48 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/13 17:47:56 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief The memset() function fills the first n bytes of the memory area 
+ * pointed to by s with the constant byte c.
+ * The memset() function returns a pointer to the memory area s.
+ * @param s 
+ * @param c 
+ * @param n 
+ * @return void* 
+ */
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			i;

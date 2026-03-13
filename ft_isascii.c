@@ -6,10 +6,17 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:37:50 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/11 15:32:07 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/13 17:43:27 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief checks whether c is a 7-bit unsigned char value that fits into the 
+ * ASCII character set.
+ * 
+ * @param c 
+ * @return int 
+ */
 int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);

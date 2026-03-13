@@ -6,10 +6,16 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:34:10 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/11 15:32:13 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/13 17:43:43 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief checks for a digit (0 through 9).
+ * 
+ * @param c 
+ * @return int 
+ */
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
