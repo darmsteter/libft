@@ -25,16 +25,16 @@
  */
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	int	len;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
-	len = ft_strlen(s) + 1;
-	while (i <= len)
+	while (1)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return ((char *)&s[i]);
+		if (!s[i])
+			return (NULL);
 		i++;
 	}
-	return (NULL);
 }

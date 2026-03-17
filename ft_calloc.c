@@ -31,12 +31,15 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*allocated_memory;
+	size_t	total_size;
 
-	if (nmemb == 0 || size == 0)
-		//return unique pointer
-	allocated_memory = malloc(nmemb * size);
+	if (nmemb != 0 && size != 0 && nmemb > SIZE_MAX / size)
+    	return NULL;
+	total_size = size * nmemb;
+	allocated_memory = malloc(total_size);
 	if (!allocated_memory)
 		return (NULL);
-	ft_bzero(allocated_memory, nmemb);
+	if (total_size > 0)
+		ft_bzero(allocated_memory, total_size);
 	return (allocated_memory);
 }

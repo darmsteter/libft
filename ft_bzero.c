@@ -22,7 +22,7 @@
  */
 void	ft_bzero(void *s, size_t n)
 {
-	int				i;
+	size_t				i;
 	unsigned char	*char_s;
 
 	i = 0;
