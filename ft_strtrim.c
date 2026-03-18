@@ -12,14 +12,6 @@
 
 #include "libft.h"
 
-/**
- * Allocates memory (using malloc(3)) and returns acopy of ’s1’ with 
- * characters from ’set’ removed from the beginning and the end.
- * @param s1 	The string to be trimmed.
- * @param set   The string containing the set of characters 
- * 				to be removed.
- */
-
 static int	iscontain(char c, char const *set)
 {
 	size_t	i;
@@ -34,38 +26,28 @@ static int	iscontain(char c, char const *set)
 	return (0);
 }
 
-static size_t	find_len(char const *s1, char const *set)
-{
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s1);
-	i = 0;
-	while (1)
-	{
-		if (iscontain(s1[len], set))
-			len--;
-		else
-			break ;
-	}
-	while (1)
-	{
-		if (iscontain(s1[i], set))
-		{
-			len--;
-			i++;
-		}
-		else
-			break ;
-	}
-	return (len);
-}
-
-
+/**
+ * Allocates memory (using malloc(3)) and returns acopy of ’s1’ with
+ * characters from ’set’ removed from the beginning and the end.
+ * @param s1 	The string to be trimmed.
+ * @param set   The string containing the set of characters
+ * 				to be removed.
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	size;
+	size_t	start_s;
+	size_t	end_s;
+	char	*trimmed_s;
 
-	size = find_len(s1, set);
-
+	start_s = 0;
+	while (s1[start_s] && iscontain(s1[start_s], set))
+		start_s++;
+	end_s = ft_strlen(s1);
+	while ((end_s > start_s) && iscontain(s1[end_s - 1], set))
+		end_s--;
+	trimmed_s = malloc(end_s - start_s + 1);
+	if (!trimmed_s)
+		return (NULL);
+	ft_strlcpy(trimmed_s, &s1[start_s], end_s - start_s + 1);
+	return (trimmed_s);
 }
