@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 16:47:14 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/13 18:04:06 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:39:30 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*allocated_memory;
 	size_t	total_size;
 
-	if (nmemb != 0 && size != 0 && nmemb > SIZE_MAX / size)
-    	return NULL;
 	total_size = size * nmemb;
 	allocated_memory = malloc(total_size);
 	if (!allocated_memory)
 		return (NULL);
 	if (total_size > 0)
-		ft_bzero(allocated_memory, total_size);
+		ft_bzero(allocated_memory, nmemb);
 	return (allocated_memory);
 }

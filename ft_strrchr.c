@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:45:45 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/13 17:53:33 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:48:44 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (1)
 	{
 		if (s[len] == (unsigned char)c)
-            return ((char *)&s[len]);
-        if (len == 0)
-            break;
-        len--;
+			return ((char *)&s[len]);
+		if (len == 0)
+			break ;
+		len--;
 	}
 	return (NULL);
 }

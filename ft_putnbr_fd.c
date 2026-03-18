@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/18 17:25:55 by skorenev          #+#    #+#             */
+/*   Updated: 2026/03/18 17:38:32 by skorenev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+#include <unistd.h>
+
+/**
+ * @brief Outputs the integer ’n’ to the specified file descriptor.
+ * 
+ * @param n  The integer to output.
+ * @param fd The file descriptor on which to write.
+ */
+void ft_putnbr_fd(int n, int fd)
+{
+	long	num_l;
+	char c;
+	
+	num_l = n;
+	if (num_l < 0)
+	{
+		num_l *= -1L;
+		write(fd, "-", 1);
+	}
+	if (num_l > 9)
+		ft_putnbr_fd(num_l / 10, fd);
+	c = (num_l % 10) + '0';
+	write(fd, &c, 1);
+}
+
+int main()
+{
+	ft_putnbr_fd(-2147483648, 1);
+}

@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:04:44 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/13 17:39:53 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:31:14 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  */
 void	ft_bzero(void *s, size_t n)
 {
-	size_t				i;
+	size_t			i;
 	unsigned char	*char_s;
 
 	i = 0;
