@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:18:42 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 17:24:54 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:49:20 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
  */
 void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-
 	if (fd < 0 || !s)
 		return ;
 	ft_putstr_fd(s, fd);

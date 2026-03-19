@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:20:42 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 11:45:41 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/19 16:46:05 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
-	size_t	len;
 
 	i = 0;
 	while (1)

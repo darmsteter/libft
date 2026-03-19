@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 13:35:35 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 16:49:41 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:47:01 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static	void	fill_str(char *str_n, int n, size_t len)
 	}
 	if (num_l == 0)
 		str_n[0] = '0';
-	while(num_l > 0)
+	while (num_l > 0)
 	{
 		len--;
 		str_n[len] = (num_l % 10) + '0';
@@ -63,7 +63,6 @@ static	void	fill_str(char *str_n, int n, size_t len)
  */
 char	*ft_itoa(int n)
 {
-	size_t	i;
 	size_t	num_len;
 	char	*str_n;
 

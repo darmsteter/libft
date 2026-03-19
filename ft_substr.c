@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 14:18:27 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 12:42:38 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:11:30 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 
 	len_s = ft_strlen(s);
-	if (start > len_s)
-		return (NULL);
-	substr = malloc(len);
+	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
-	ft_strlcat(substr, &s[start], len);
+	ft_strlcpy(substr, &s[start], len + 1);
 	return (substr);
 }

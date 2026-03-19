@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:16:38 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 17:25:08 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:49:15 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
-	
+
 	if (fd < 0 || !s)
 		return ;
 	i = 0;

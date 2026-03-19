@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 14:22:26 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 11:53:15 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:26:42 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start_s = 0;
 	while (s1[start_s] && iscontain(s1[start_s], set))
 		start_s++;
-	end_s = ft_strlen(s1);
+	end_s = ft_strlen(s1) - 1;
 	while ((end_s > start_s) && iscontain(s1[end_s], set))
 		end_s--;
-	trimmed_s1 = malloc(end_s - start_s + 1);
+	trimmed_s1 = malloc(end_s - start_s + 2);
 	if (!trimmed_s1)
 		return (NULL);
-	ft_strlcpy(trimmed_s1, &s1[start_s], end_s - start_s +1);
+	ft_strlcpy(trimmed_s1, &s1[start_s], end_s - start_s + 2);
 	return (trimmed_s1);
 }

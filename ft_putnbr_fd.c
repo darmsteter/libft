@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:25:55 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 17:38:32 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:49:47 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
  * @param n  The integer to output.
  * @param fd The file descriptor on which to write.
  */
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	num_l;
-	char c;
+	char	c;
 
 	if (fd < 0)
 		return ;

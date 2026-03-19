@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 16:21:19 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 16:43:31 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:47:46 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
  * @return char* The string created from the successive applications of ’f’.
  * Returns NULL if the allocation fails.
  */
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t i;
+	size_t	i;
 	size_t	len;
 	char	*new_s;
 
