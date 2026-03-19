@@ -23,13 +23,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
-	if (fd < 0)
+	if (fd < 0 || !s)
 		return ;
-	i = 0;
-	while (s[i])
-	{
-		write(fd, s[i], 1);
-		i++;
-	}
-	write(fd, '\n', 1);
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }

@@ -16,37 +16,35 @@ static size_t	find_arr_size(char const *s, char c)
 {
 	size_t	size_arr;
 	size_t	i;
-	int		was_added;
 
+	size_arr = 0;
 	i = 0;
-	was_added = 0;
-	size_arr = 1;
-	while (s[i] == c)
-		i++;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
 		{
 			size_arr++;
-			was_added = 1;
+			while (s[i] && s[i] != c)
+				i++;
 		}
-		i++;
 	}
-	if (was_added)
-		size_arr++;
 	return (size_arr);
 }
 
-static	size_t	find_substr_len(const char *s, char c, size_t i)
+static char	*word_dup(const char *s, size_t start, size_t end)
 {
-	size_t	len;
+	char	*word;
+	size_t	i = 0;
 
-	len = 0;
-	while (s[i] && s[i] != c)
-	{
-		len++;
-	}
-	return (len);
+	word = malloc(end - start + 1);
+	if (!word)
+		return (NULL);
+	while (start < end)
+		word[i++] = s[start++];
+	word[i] = '\0';
+	return (word);
 }
 
 /**
@@ -64,29 +62,38 @@ static	size_t	find_substr_len(const char *s, char c, size_t i)
  */
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	size_str;
-	char	**array_of_str;
+	char	**arr;
+	size_t	i = 0, j = 0;
+	size_t	start;
 
-	array_of_str = malloc(sizeof(char *) * find_arr_size(s, c));
-	if (!array_of_str)
+	if (!s)
 		return (NULL);
-	j = 0;
+
+	arr = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!arr)
+		return (NULL);
+
 	while (s[i])
 	{
-		size_str = find_substr_len(s, c, i);
-		if (size_str > 0)
+		while (s[i] && s[i] == c)
+			i++;
+
+		if (s[i])
 		{
-			array_of_str[j] = ft_substr(s, i, size_str);
-			i += size_str;
+			start = i;
+			while (s[i] && s[i] != c)
+				i++;
+			arr[j] = word_dup(s, start, i);
+			if (!arr[j])
+			{
+				while (j > 0)
+					free(arr[--j]);
+				free(arr);
+				return (NULL);
+			}
 			j++;
 		}
-		else
-		{
-			array_of_str[j] = NULL;
-			break ;
-		}
 	}
-	return (array_of_str);
+	arr[j] = NULL;
+	return (arr);
 }

@@ -22,29 +22,37 @@
  */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	s2_len;
-	char	*joined_s;
+	char	*joined;
+	size_t	len1;
+	size_t	len2;
 	size_t	i;
+	size_t	j;
 
-	if (s1 && s2)
+	if (!s1 || !s2)
+		return (NULL);
+
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+
+	joined = malloc(len1 + len2 + 1);
+	if (!joined)
+		return (NULL);
+
+	i = 0;
+	while (i < len1)
 	{
-		s2_len = ft_strlen(s2);
-		joined_s = malloc(ft_strlen(s1) + s2_len + 1);
-		if (!joined_s)
-			return (NULL);
-		i = 0;
-		while (s1[i])
-		{
-			joined_s[i] = s1[i];
-			i++;
-		}
-		while (s2[s2_len - i])
-		{
-			joined_s[i] = s1[s2_len - i];
-			i++;
-		}
-		joined_s[i] = '\0';
+		joined[i] = s1[i];
+		i++;
 	}
-	return (NULL);
+
+	j = 0;
+	while (j < len2)
+	{
+		joined[i + j] = s2[j];
+		j++;
+	}
+
+	joined[i + j] = '\0';
+	return (joined);
 }
 

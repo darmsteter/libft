@@ -17,55 +17,40 @@ static	size_t	find_number_len(int n)
 	size_t	num_len;
 	long	num_l;
 
-	if (n == 0)
-		return (1);
 	num_len = 0;
-	if (n < 0)
+	num_l = n;
+	if (n <= 0)
 	{
+		num_l = -1L * n;
 		num_len++;
-		num_l = n * (-1L);
 	}
-	else
-		num_l = n;
 	while (num_l > 0)
 	{
 		num_l /= 10;
 		num_len++;
 	}
-
 	return (num_len);
-}
-
-static int ft_pow (int n, int pow)
-{
-	if (pow == 0)
-		return (1);
-	return (n * ft_pow(n, pow - 1));
 }
 
 static	void	fill_str(char *str_n, int n, size_t len)
 {
-	size_t	i;
 	long	num_l;
 
+	str_n[len] = '\0';
 	num_l = n;
-
-	i = 0;
 	if (num_l < 0)
 	{
 		num_l *= -1;
 		str_n[0] = '-';
-		i++;
-		len--;
 	}
-	while (num_l > 10)
+	if (num_l == 0)
+		str_n[0] = '0';
+	while(num_l > 0)
 	{
-		str_n[i] = num_l / ft_pow(10, len - 1) + '0';
-		num_l = num_l % ft_pow(10, len - 1);
 		len--;
-		i++;
+		str_n[len] = (num_l % 10) + '0';
+		num_l /= 10;
 	}
-	str_n[i] = num_l + '0';
 }
 
 /**
@@ -83,7 +68,7 @@ char	*ft_itoa(int n)
 	char	*str_n;
 
 	num_len = find_number_len(n);
-	str_n = malloc(num_len);
+	str_n = malloc(num_len + 1);
 	if (!str_n)
 		return (NULL);
 	fill_str(str_n, n, num_len);

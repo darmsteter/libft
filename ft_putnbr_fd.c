@@ -23,7 +23,9 @@ void ft_putnbr_fd(int n, int fd)
 {
 	long	num_l;
 	char c;
-	
+
+	if (fd < 0)
+		return ;
 	num_l = n;
 	if (num_l < 0)
 	{
@@ -31,12 +33,7 @@ void ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 	}
 	if (num_l > 9)
-		ft_putnbr_fd(num_l / 10, fd);
+		ft_putnbr_fd((int)(num_l / 10), fd);
 	c = (num_l % 10) + '0';
 	write(fd, &c, 1);
-}
-
-int main()
-{
-	ft_putnbr_fd(-2147483648, 1);
 }
