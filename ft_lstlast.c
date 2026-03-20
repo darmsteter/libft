@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 18:03:37 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/19 15:38:34 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:07:30 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param lst The beginning of the list.
  * @return t_list* Last node of the list
  */
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);

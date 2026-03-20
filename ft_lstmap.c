@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 18:20:12 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/19 16:49:23 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:09:10 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,4 @@
  * if needed.
  * @return t_list* The new list. NULL if the allocation fails.
  */
-// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-// {
-	
-// }
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

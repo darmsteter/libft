@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:43:32 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/19 15:38:44 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:06:12 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @param content The content to store in the new node.
  * @return t_list* A pointer to the new node
  */
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 

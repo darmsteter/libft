@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:57:10 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/19 15:38:51 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:07:07 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param lst  The beginning of the list.
  * @return int The length of the list
  */
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	size;
 

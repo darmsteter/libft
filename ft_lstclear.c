@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 18:16:58 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 18:18:22 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:41:42 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,16 @@
  * @param del The address of the function used to delete the content 
  * of the node.
  */
-void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*tmp_node;
+
+	if (!del && !*lst && !lst)
+		return ;
+	while (lst && *lst)
+	{
+		tmp_node = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp_node;
+	}
+}

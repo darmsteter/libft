@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 18:08:07 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/19 15:38:06 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:08:12 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
  * @param lst The address of a pointer to the first node of a list.
  * @param new The address of a pointer to the node to be added.
  */
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last;
+	t_list	*last;
 
 	if (!lst || !new)
 		return ;

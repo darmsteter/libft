@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 16:47:14 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 18:32:09 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/20 17:21:45 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (!allocated_memory)
 		return (NULL);
 	if (total_size > 0)
-		ft_bzero(allocated_memory, nmemb);
+		ft_bzero(allocated_memory, total_size);
 	return (allocated_memory);
 }
