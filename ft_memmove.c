@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:47:44 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 11:44:15 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/24 16:56:22 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		while (n > 0)
-		{
-			n--;
+		while (n-- > 0)
 			char_dest[n] = char_src[n];
-		}
 	}
 	return (dest);
 }

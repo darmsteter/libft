@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 18:20:12 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/20 15:09:10 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:47:42 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,27 @@
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list  *temp_lst;
-    t_list  *new_lst;
+	t_list	*new_list;
+	t_list	*temp_list;
 
-    if (!lst || !f || !del)
-        return (NULL);
-    temp_lst = ft_lstnew(f(lst->content));
-    if (!temp_lst)
-        return (NULL);
-    new_lst = temp_lst;
-    lst = lst->next;
-    while (lst)
-    {
-        temp_lst->next  = ft_lstnew(f(lst->content));
-        if (!temp_lst->next)
-        {
-            ft_lstclear(&new_lst, del);
-            return (NULL);
-        }
-        temp_lst = temp_lst->next;
-        lst = lst->next;
-    }
-    temp_lst->next = NULL;
-    return (new_lst);
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = ft_lstnew(f(lst->content));
+	if (!new_list)
+		return (NULL);
+	temp_list = new_list;
+	lst = lst->next;
+	while (lst)
+	{
+		temp_list->next = ft_lstnew(f(lst->content));
+		if (!temp_list)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		lst = lst->next;
+		temp_list = temp_list->next;
+	}
+	temp_list->next = NULL;
+	return (new_list);
 }

@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 14:18:27 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/20 17:50:49 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/24 16:32:48 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 /**
  * @brief Allocates memory (using malloc(3)) and returns a substring from the 
- * string ’s’. The substring starts at index ’start’ and has a maximum length
+ * string ’s’. The substring starts at index ’start’ and has a maximum length 
  * of ’len’.
- *		* if start >= s_len -> return ""
- *
+ * 
  * @param s The original string from which to create the substring.
  * @param start The starting index of the substring within ’s’.
  * @param len The maximum length of the substring.

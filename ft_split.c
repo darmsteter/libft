@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 12:52:35 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/20 19:24:20 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/24 16:51:29 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	count_words(char const *s, char c)
 	size_t	i;
 	int		count;
 	int		is_first_letter;
-	
+
 	i = 0;
 	count = 0;
 	is_first_letter = 1;
@@ -37,17 +37,17 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-int find_word_len(char const *s, char c)
+int	find_word_len(char const *s, char c)
 {
 	int	len;
-	
+
 	len = 0;
 	while (s[len] && s[len] != c)
 		len++;
 	return (len);
 }
 
-char	*fill_word(char const *s, char c, char *word)
+char	*fill_word(char const *s, char c, char *word, int *count)
 {
 	int	i;
 
@@ -57,6 +57,7 @@ char	*fill_word(char const *s, char c, char *word)
 		word[i] = s[i];
 		i++;
 	}
+	*count += i;
 	word[i] = '\0';
 	return (word);
 }
@@ -90,31 +91,26 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		count;
 	char	**splited_words;
 	char	*word;
-	
+
 	i = 0;
 	j = 0;
-	count = count_words(s, c);
-	splited_words = malloc((count + 1) * sizeof(char *));
+	splited_words = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!splited_words)
 		return (NULL);
-	while (j < count)
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		if (s[i] && s[i] != c)
-		{	
+		{
 			word = malloc(find_word_len(&s[i], c) + 1);
 			if (!word)
 				return (free_arr(j, splited_words));
-			fill_word(&s[i], c, word);
-			splited_words[j] = word;
-			while (s[i] && s[i] != c)
-				i++;
+			fill_word(&s[i], c, word, &i);
+			splited_words[j++] = word;
 		}
-		j++;
 	}
 	splited_words[j] = NULL;
 	return (splited_words);
