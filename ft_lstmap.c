@@ -24,4 +24,29 @@
  * if needed.
  * @return t_list* The new list. NULL if the allocation fails.
  */
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+    t_list  *temp_lst;
+    t_list  *new_lst;
+
+    if (!lst || !f || !del)
+        return (NULL);
+    temp_lst = ft_lstnew(f(lst->content));
+    if (!temp_lst)
+        return (NULL);
+    new_lst = temp_lst;
+    lst = lst->next;
+    while (lst)
+    {
+        temp_lst->next  = ft_lstnew(f(lst->content));
+        if (!temp_lst->next)
+        {
+            ft_lstclear(&new_lst, del);
+            return (NULL);
+        }
+        temp_lst = temp_lst->next;
+        lst = lst->next;
+    }
+    temp_lst->next = NULL;
+    return (new_lst);
+}

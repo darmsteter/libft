@@ -14,9 +14,10 @@
 
 /**
  * @brief Allocates memory (using malloc(3)) and returns a substring from the 
- * string ’s’. The substring starts at index ’start’ and has a maximum length 
+ * string ’s’. The substring starts at index ’start’ and has a maximum length
  * of ’len’.
- * 
+ *		* if start >= s_len -> return ""
+ *
  * @param s The original string from which to create the substring.
  * @param start The starting index of the substring within ’s’.
  * @param len The maximum length of the substring.
@@ -24,13 +25,28 @@
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	len_s;
+	size_t	s_len;
+	size_t	copy_len;
 	char	*substr;
 
-	len_s = ft_strlen(s);
-	substr = malloc(len + 1);
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+	{
+		substr = malloc(1);
+		if (!substr)
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
+	}
+	if (s_len - start < len)
+		copy_len = s_len - start;
+	else
+		copy_len = len;
+	substr = malloc(copy_len + 1);
 	if (!substr)
 		return (NULL);
-	ft_strlcpy(substr, &s[start], len + 1);
+	ft_strlcpy(substr, s + start, copy_len + 1);
 	return (substr);
 }
