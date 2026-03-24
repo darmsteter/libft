@@ -39,7 +39,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		temp_list->next = ft_lstnew(f(lst->content));
-		if (!temp_list)
+		if (!temp_list->next)
 		{
 			ft_lstclear(&new_list, del);
 			return (NULL);

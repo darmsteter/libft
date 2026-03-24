@@ -47,7 +47,7 @@ int	find_word_len(char const *s, char c)
 	return (len);
 }
 
-char	*fill_word(char const *s, char c, char *word, int *count)
+char	*fill_word(char const *s, char c, char *word, int *index)
 {
 	int	i;
 
@@ -57,19 +57,15 @@ char	*fill_word(char const *s, char c, char *word, int *count)
 		word[i] = s[i];
 		i++;
 	}
-	*count += i;
+	*index += i;
 	word[i] = '\0';
 	return (word);
 }
 
 char	**free_arr(int j, char **splited_words)
 {
-	j--;
-	while (j > 0)
-	{
+	while (--j >= 0)
 		free(splited_words[j]);
-		j--;
-	}
 	free(splited_words);
 	return (NULL);
 }
