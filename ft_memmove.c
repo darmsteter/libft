@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:47:44 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/24 16:56:22 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:37:27 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  * @param dest 
  * @param src 
  * @param n 
- * @return void* 
+ * @return void* returns a pointer to dest.
  */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:02:12 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 11:47:43 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:38:23 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 /**
  * @brief The strncmp() function compares only the first (at most) n bytes 
- * of s1 and s2  The locale is not taken into account (for a locale-aware 
- * com‐parison, see strcoll(3)).  The comparison is done using unsigned 
- * characters. strcmp() returns an integer indicating the result of the 
- * comparison, as follows:
+ * of s1 and s2. The comparison is done using unsigned characters. strcmp() 
+ * returns an integer indicating the result of the comparison, as follows:
  * 		• 0, if the s1 and s2 are equal;
  * 		• a negative value if s1 is less than s2;
  * 		• a positive value if s1 is greater than s2.

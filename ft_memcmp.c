@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 15:29:09 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 11:40:47 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:37:22 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 /**
  * @brief  The memcmp() function compares the first n bytes (each interpreted 
  * as unsigned char) of the memory areas s1 and s2. 
- * The  memcmp()  function returns an integer less than, equal to, or greater 
+ * 
+ * @param s1 
+ * @param s2 
+ * @param n 
+ * @return int returns an integer less than, equal to, or greater 
  * than zero if the first n bytes of s1 is found, respectively, to be less than, 
  * to match, or be greater than the first n bytes of s2. For a nonzero return 
  * value, the sign is determined by the sign of the difference between the first 
  * pair of bytes  (inter‐preted as unsigned char) that differ in s1 and s2.
  * If n is zero, the return value is zero.
- * @param s1 
- * @param s2 
- * @param n 
- * @return int 
  */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

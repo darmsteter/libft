@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 18:20:12 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/24 14:47:42 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:37:10 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,27 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*temp_list;
+	t_list	*temp_noda;
+	void	*content;
 
-	if (!lst || !f || !del)
-		return (NULL);
-	new_list = ft_lstnew(f(lst->content));
-	if (!new_list)
-		return (NULL);
-	temp_list = new_list;
-	lst = lst->next;
+	new_list = NULL;
 	while (lst)
 	{
-		temp_list->next = ft_lstnew(f(lst->content));
-		if (!temp_list->next)
+		content = f(lst->content);
+		if (!content)
 		{
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
+		temp_noda = ft_lstnew(content);
+		if (!temp_noda)
+		{
+			del(content);
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, temp_noda);
 		lst = lst->next;
-		temp_list = temp_list->next;
 	}
-	temp_list->next = NULL;
 	return (new_list);
 }

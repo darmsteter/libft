@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: skorenev <skorenev@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:20:42 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/19 16:46:05 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/04/15 14:45:17 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * @brief The strchr() function returns a pointer to the first occurrence 
  * of the character c in the string s.
- * The strchr() and strrchr() functions return a pointer to the matched character
+ * The strchr() function return a pointer to the matched character
  * or NULL if the  character  is  not  found. The  terminating  null byte is 
  * considered part of the string, so that if c is specified as '\0', these 
  * functions return a pointer to the terminator.

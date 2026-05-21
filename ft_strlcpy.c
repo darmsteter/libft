@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 18:19:42 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/18 11:46:11 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:38:14 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief The strlcpy() function copies up to size - 1 characters from the 
- * NUL-terminated string src to dst, NUL-terminating the re‐sult.
+ * NUL-terminated string src to dst, NUL-terminating the result.
  * 
  * @param dst 
  * @param src 

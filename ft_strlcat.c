@@ -6,7 +6,7 @@
 /*   By: skorenev <skorenev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 18:23:55 by skorenev          #+#    #+#             */
-/*   Updated: 2026/03/24 14:23:34 by skorenev         ###   ########.fr       */
+/*   Updated: 2026/03/25 17:38:12 by skorenev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
  * 		* else return (dst_len + src_len). 
  * 		* if (dst_len + src_len) > size -> src was trimmed
  * 		* if (dst_len + src_len) < size -> ok
- *  
  * 
  * The strlcat() function appends the NUL-terminated string src to the end 
  * of dst.  It will append at most size - strlen(dst) - 1 bytes, 
